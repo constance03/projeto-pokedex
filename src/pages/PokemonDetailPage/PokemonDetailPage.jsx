@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import Header from "../../components/Header/Header";
+import React, { useContext, useEffect } from "react";
 import {
   BarStats,
   BoxBaseStats,
@@ -34,10 +33,13 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { getPokemonType } from "../../functions/types";
 import { getPokemonColors } from "../../functions/color";
+import { GlobalContext } from "../../contexts/GlobalContext";
+import Header from "../../components/Header/Header";
 
 const PokemonDetailPage = () => {
   const params = useParams();
-  const [pokemonDetails, setPokemonDetails] = useState([]);
+  const context = useContext(GlobalContext)
+  const {pokemonDetails, setPokemonDetails} = context
 
   useEffect(() => {
     fetchPokemonDetails();
@@ -77,9 +79,10 @@ const PokemonDetailPage = () => {
     );
   };
 
+
   return (
     <div>
-      <Header />
+      <Header/>
       <Container>
         <TitleDetails>Detalhes</TitleDetails>
         {/* send the color from the function using props to the styled and change the card color */}
@@ -103,7 +106,7 @@ const PokemonDetailPage = () => {
               {pokemonDetails.stats?.map((stat) => {
                 return (
                   <>
-                    <DivStat>
+                    <DivStat key={stat.stat.name}>
                       <TextStats>
                         {stat.stat.name.charAt(0).toUpperCase() +
                           stat.stat.name.slice(1)}

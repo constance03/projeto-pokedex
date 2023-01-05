@@ -58,7 +58,26 @@ export const ImgArrow = styled.img`
   top: 72px;
 `;
 
-export const ButtonAddOrDelete = styled.button`
+export const ButtonAddtoPokedex = styled.button`
+  padding: 4px 10px;
+  position: absolute;
+  width: 226px;
+  height: 57px;
+  left: 1174px;
+  top: 51px;
+  border: 0;
+  background-color: #33a4f5;
+  border-radius: 8px;
+  cursor: pointer;
+  //font style
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+`;
+
+export const ButtonDeleteFromPokedex = styled.button`
   padding: 4px 10px;
   position: absolute;
   width: 226px;
