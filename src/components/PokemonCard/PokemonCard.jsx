@@ -12,12 +12,13 @@ import {
   PokemonType,
   ButtonDetails,
   ButtonCapture,
-  ButtonDelete,
+  ButtonDelete
 } from "./pokemonCardStyle";
 import pokeball from "../../assets/pokeball.png";
 import { getPokemonType } from "../../functions/types";
 import { getPokemonColors } from "../../functions/color";
 import { GlobalContext } from "../../contexts/GlobalContext";
+
 
 const PokemonCard = (props) => {
   const navigate = useNavigate();
@@ -27,6 +28,7 @@ const PokemonCard = (props) => {
   const [pokemonInfo, setPokemonInfo] = useState([]);
   // hook para saber nosso path atual
   const location = useLocation();
+
 
   //use API to get the pokemon details from the pokemons list
   useEffect(() => {
@@ -44,6 +46,8 @@ const PokemonCard = (props) => {
         console.log(error.response);
       });
   };
+
+
 
   return (
     //set the card color following a function, using the .types property from API

@@ -7,6 +7,8 @@ import Router from "./routes/Router.jsx";
 function App() {
   const [pokemonList, setPokemonList] = useState([]);
   const [pokedex, setPokedex] = useState([]);
+  const [pokemonDetails, setPokemonDetails] = useState([]);
+  const [showMessage, setShowMessage] = useState(false);
 
   useEffect(() => {
     fetchPokemonList();
@@ -35,6 +37,7 @@ function App() {
       const newPokedex = [...pokedex, pokemonToAdd];
       setPokedex(newPokedex);
     }
+    setShowMessage(true)
   };
 
   //remove a pokemon from pokedex
@@ -42,30 +45,10 @@ function App() {
     const newPokedex = pokedex.filter(
       (pokemonInPokedex) => pokemonInPokedex.name !== pokemonToRemove.name
     );
-
     setPokedex(newPokedex);
+    setShowMessage(true)
   };
 
-
-  //remove or add, depending if the pokemon is on the pokedex or not
-  const addOrRemovePokedex = (pokemonToAddOrRemove) => {
-    const isAlreadyOnPokedex = pokedex.find(
-      (pokemonInPokedex) => pokemonInPokedex.id === pokemonToAddOrRemove
-    );
-
-     if (!isAlreadyOnPokedex) {
-      console.log("not found");
-    } else {
-      console.log("found");
-    }
-
-    // if (!isAlreadyOnPokedex) {
-    //   const newPokedex = [...pokedex, pokemonToAddOrRemove];
-    //   setPokedex(newPokedex);
-    // } else {
-    //   removeFromPokedex(pokemonToAddOrRemove)
-    // }
-  };
 
   //pass the states through context to use on other pages
   const context = {
@@ -75,7 +58,10 @@ function App() {
     setPokedex,
     addToPokedex,
     removeFromPokedex,
-    addOrRemovePokedex
+    pokemonDetails, 
+    setPokemonDetails,
+    showMessage, 
+    setShowMessage
   };
 
   return (
