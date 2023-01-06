@@ -70,14 +70,14 @@ const Header = () => {
         );
         default:
           return (
-            <DivHeader>
+            <>
               {renderButton()}
               <ImgLogo src={logo} />
               <ImgArrow src={arrow} />
               <ButtonPokemonsList onClick={() => goToPokemonsListPage(navigate)}>
                 Voltar para Pokemons
               </ButtonPokemonsList>
-          </DivHeader>
+          </>
           )
     }
   };
