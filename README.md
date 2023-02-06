@@ -1,6 +1,6 @@
 # **Projeto Pokédex**
 
-O Projeto Pokédex é um site de pokémons que possui três páginas: Home, Pokedex e Detalhes. O projeto terá como fonte de dados a [Poke Api](https://pokeapi.co/ "Poke Api"), uma API pública de Pokémons. Esse projeto foi desenvolvido como parte do bootcamp Labenu.
+O Projeto Pokédex é um site de pokémons que possui três páginas: Home, Pokedex e Detalhes. O projeto tem como fonte de dados a [Poke Api](https://pokeapi.co/ "Poke Api"), uma API pública de Pokémons. Esse projeto foi desenvolvido como parte do bootcamp Labenu.
 
 ## 🔍 **Índice**
 
